@@ -1,0 +1,156 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background:
+    radial-gradient(circle at top left, #1e1b4b, #020817 40%);
+  font-family: Inter, sans-serif;
+  color: white;
+}
+
+.app {
+  min-height: 100vh;
+  padding: 20px 35px;
+}
+
+.header {
+  margin-bottom: 35px;
+}
+
+.logo {
+  font-size: 58px;
+  font-weight: 800;
+  margin-bottom: 10px;
+  background: linear-gradient(to right, #ffffff, #818cf8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+  color: #94a3b8;
+  font-size: 18px;
+}
+
+.main-layout {
+  display: flex;
+  gap: 25px;
+}
+
+.left-panel,
+.right-panel {
+  background: rgba(17, 24, 39, 0.75);
+  border: 1px solid rgba(255,255,255,0.08);
+  backdrop-filter: blur(14px);
+  border-radius: 24px;
+  box-shadow:
+    0 8px 40px rgba(0,0,0,0.35);
+}
+
+.left-panel {
+  width: 360px;
+  padding: 28px;
+}
+
+.right-panel {
+  flex: 1;
+  padding: 30px;
+  min-height: 600px;
+}
+
+.section-title {
+  font-size: 24px;
+  margin-bottom: 18px;
+}
+
+.input-box,
+.select-box {
+  width: 100%;
+  padding: 15px;
+  margin-top: 16px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(31, 41, 55, 0.8);
+  color: white;
+  font-size: 16px;
+}
+
+.input-box:focus,
+.select-box:focus {
+  outline: none;
+  border: 1px solid #818cf8;
+  box-shadow: 0 0 15px rgba(99,102,241,0.4);
+}
+
+.generate-btn {
+  width: 100%;
+  margin-top: 22px;
+  padding: 15px;
+  border-radius: 14px;
+  border: none;
+  background: linear-gradient(to right, #6366f1, #8b5cf6);
+  color: white;
+  font-size: 17px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.generate-btn:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    0 10px 25px rgba(99,102,241,0.45);
+}
+
+.response-text {
+  color: #dfe7ff;
+  line-height: 1.9;
+  font-size: 1.05rem;
+  white-space: pre-wrap;
+}
+
+.mode-group {
+  margin-top: 22px;
+}
+
+@media (max-width: 900px) {
+  .main-layout {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .left-panel {
+    width: 100%;
+  }
+}
+.main-logo {
+  width: 180px;
+  height: auto;
+  object-fit: contain;
+  margin-bottom: 10px;
+  mix-blend-mode: screen;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+.answer-btn {
+  background: #1e293b;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.answer-btn:hover {
+  background: #6366f1;
+}
