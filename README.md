@@ -126,7 +126,23 @@ GROQ_API_KEY=your_api_key_here
 
 # 📸 Screenshots
 
-Add screenshots here before final submission.
+## Homepage
+![Homepage](screenshots/homepage.png)
+
+## Summary Mode
+![Summary](screenshots/summary.png)
+
+## Flashcards Mode
+![Flashcards](screenshots/flashcards.png)
+
+## Explain Simply
+![Explain Simply](screenshots/explainsimply.png)
+
+## Study Plan
+![Study Plan](screenshots/studyplan.png)
+
+## Test Me
+![Test Me](screenshots/testme.png)
 
 Suggested screenshots:
 
