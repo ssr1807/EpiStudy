@@ -220,7 +220,10 @@ const downloadResponse = () => {
               }
               </ReactMarkdown>
           </div>
-          <button onClick={downloadResponse}>
+          <button
+            className="download-btn"
+            onClick={downloadResponse}
+          >
             Download Response
           </button>
           <div className="follow-up-section">
@@ -243,7 +246,10 @@ const downloadResponse = () => {
       {followResponse}
     </ReactMarkdown>
   </div>
-  <button onClick={downloadFollowUp}>
+  <button
+    className="download-btn"
+    onClick={downloadFollowUp}
+  >
   Download Follow-Up
 </button>
 </div>
