@@ -4,7 +4,7 @@ from dotenv import load_dotenv
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 
-from langchain_openai import ChatOpenAI
+from langchain_groq import ChatGroq
 
 # =========================
 # LOAD ENV
@@ -24,12 +24,9 @@ CORS(app)
 # =========================
 # LLM
 # =========================
-
-llm = ChatOpenAI(
-    model="llama-3.3-70b-versatile",
-    api_key=GROQ_API_KEY,
-    base_url="https://api.groq.com/openai/v1",
-    temperature=0.7
+llm = ChatGroq(
+    groq_api_key=os.getenv("GROQ_API_KEY"),
+    model_name="llama3-8b-8192"
 )
 
 # =========================
