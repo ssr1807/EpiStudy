@@ -27,7 +27,7 @@ export default function App() {
 
   try {
     const response = await fetch(
-      "http://127.0.0.1:5000/generate",
+      "https://epistudy.onrender.com/generate",
       {
         method: "POST",
         headers: {
@@ -59,7 +59,7 @@ const handleFollowUp = async () => {
 
   try {
     const response = await fetch(
-      "http://127.0.0.1:5000/followup",
+      "https://epistudy.onrender.com/followup",
       {
         method: "POST",
         headers: {
