@@ -72,12 +72,14 @@ def generate():
     A:
     - Do NOT create study plans
     - Do NOT mention Day 1, Day 2, etc.
+    
     If mode is "Explain Simply":
         - Explain the topic in very simple language
         - Use easy examples if needed
         - Do NOT create study plans
         - Do NOT mention Day 1, Day 2, etc.
         - Do NOT create flashcards or test
+        
     If mode is "Test Me":
     - Generate:
     1. MCQs

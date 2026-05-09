@@ -71,6 +71,29 @@ const handleFollowUp = async () => {
     }),
       }
     );
+    const downloadResponse = () => {
+      const blob = new Blob([responseText], { type: "text/plain" });
+      const url = window.URL.createObjectURL(blob);
+
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "response.txt";
+      a.click();
+
+      window.URL.revokeObjectURL(url);
+    };
+
+    const downloadFollowUp = () => {
+      const blob = new Blob([followResponse], { type: "text/plain" });
+      const url = window.URL.createObjectURL(blob);
+
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "followup.txt";
+      a.click();
+
+      window.URL.revokeObjectURL(url);
+    };
 
     const data = await response.json();
 
@@ -177,6 +200,9 @@ const handleFollowUp = async () => {
               }
               </ReactMarkdown>
           </div>
+          <button onClick={downloadResponse}>
+            Download Response
+          </button>
           <div className="follow-up-section">
   <input
     className="input-box"
@@ -197,6 +223,9 @@ const handleFollowUp = async () => {
       {followResponse}
     </ReactMarkdown>
   </div>
+  <button onClick={downloadFollowUp}>
+  Download Follow-Up
+</button>
 </div>
         </div>
       </div>
