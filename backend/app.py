@@ -49,38 +49,48 @@ def generate():
     days = data.get("days", 7)
 
     prompt = f"""
-    Generate a {mode} for:
+    You are an AI study assistant.
 
     Topic: {topic}
-
+    Mode: {mode}
     Difficulty: {difficulty}
-
     Study plan duration: {days} days
 
-    IMPORTANT INSTRUCTIONS:
+    IMPORTANT:
+    You must ONLY generate content for the selected mode.
 
-    - If mode is "Test Me":
-        STRICTLY generate the paper in this format:
+    If mode is "Summary":
+    - Generate only a concise summary
+    - Do NOT create study plans
+    - Do NOT create flashcards
+    - Do NOT create tests
 
-        SECTION A - MCQs (1 mark each)
-        SECTION B - Short Answer Questions (2 marks each)
-        SECTION C - Long Answer Questions (5 marks each)
-        SECTION D - Numerical/Problem Solving Questions if applicable (10 marks each)
+    If mode is "Flashcards":
+    - Generate only flashcards
+    - Format:
+    Q:
+    A:
+    - Do NOT create study plans
+    - Do NOT mention Day 1, Day 2, etc.
 
-        Every question MUST contain marks.
-        Format example:
-        Q1. What is AI? (2 Marks)
-        ALWAYS provide answers after all questions under a separate heading called "Answers".
+    If mode is "Test Me":
+    - Generate:
+    1. MCQs
+    2. Short answer questions
+    3. Long answer questions
+    4. Numerical/problem-solving questions if applicable
+    5. Mention marks for every question
+    6. Put all answers under:
+    ## ANSWERS
+    - Do NOT create study plans
 
-    - If mode is "Flashcards", format each flashcard properly with spacing.
-
-    - If mode is "Study Plan":
+    If mode is "Study Plan":
     - STRICTLY create a {days}-day study plan
-    - Divide topics day-by-day
-    - Do NOT create weekly plans unless days are very large
+    - Divide content day-by-day
+    - ONLY this mode can mention Day 1, Day 2 etc.
 
-    - Use proper markdown formatting.
-    """
+    Use proper markdown formatting.
+"""
 
     response = llm.invoke(prompt)
 
