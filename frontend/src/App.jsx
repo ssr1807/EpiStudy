@@ -103,7 +103,27 @@ const handleFollowUp = async () => {
     setFollowResponse("Error generating follow-up.");
   }
 };
+const downloadResponse = () => {
+    const element = document.createElement("a");
+    const file = new Blob([responseText], { type: "text/plain" });
 
+    element.href = URL.createObjectURL(file);
+    element.download = "response.txt";
+
+    document.body.appendChild(element);
+    element.click();
+  };
+
+  const downloadFollowUp = () => {
+    const element = document.createElement("a");
+    const file = new Blob([followResponse], { type: "text/plain" });
+
+    element.href = URL.createObjectURL(file);
+    element.download = "followup.txt";
+
+    document.body.appendChild(element);
+    element.click();
+  };
   return (
     <div className="app">
       <div className="header">
